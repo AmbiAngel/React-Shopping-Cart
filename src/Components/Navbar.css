@@ -1,0 +1,19 @@
+#nav-bar{
+    margin: 0;
+    padding: 5px;
+    background-color: aquamarine;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+
+}
+.cart{
+    margin: 0 auto;
+}
