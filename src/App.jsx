@@ -5,6 +5,7 @@ import './App.css'
 import NavBar from './Components/Navbar'
 import HomePage from './Components/Home-page'
 import { Outlet } from "react-router-dom";
+import ItemCard from './Components/Item-Card'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
       </p> */}
 
       <NavBar></NavBar>
+      <ItemCard></ItemCard>
       <Outlet></Outlet>
     </div>
   )
