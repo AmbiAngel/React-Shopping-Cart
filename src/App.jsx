@@ -8,7 +8,10 @@ import { Outlet } from "react-router-dom";
 import ItemCard from './Components/Item-Card'
 
 function App() {
-
+  function handleAddToCartBtn(e){
+    e.preventDefault()
+    console.log('gi')
+  }
   return (
     <div className='content'>
       {/* <div>
@@ -33,7 +36,6 @@ function App() {
       </p> */}
 
       <NavBar></NavBar>
-      <ItemCard></ItemCard>
       <Outlet></Outlet>
     </div>
   )

@@ -3,8 +3,32 @@ import App from "./App";
 import ErrorPage from "./Components/Error-page";
 import HomePage from "./Components/Home-page";
 import ShoppingPage from './Components/Shopping-page'
+import { useState, useEffect } from "react";
 
 const Router = () => {
+
+  let [cartItems, setCartItems] = useState([])
+
+  let [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  useEffect( () => {
+    fetch('https://fakestoreapi.com/products')
+          .then(res=>res.json())
+          .then(actualData=>{
+            setData(actualData)
+            setError(null)
+          })
+          .catch((err) => {
+            setError(err.message);
+            setData(null);
+          })
+          .finally(() => {
+            setLoading(false);
+          })
+  }, []);
+
+  console.log(cartItems);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -17,11 +41,11 @@ const Router = () => {
         },
         {
           path: "/home",
-          element: <HomePage />,
+          element: <HomePage data={data} loading={loading} error={error} />,
         },
         {
           path: "/shopping",
-          element: <ShoppingPage />,
+          element: <ShoppingPage data={data} loading={loading} error={error} setCartItems={setCartItems} cartItems={cartItems}/>,
         },
       ]
     },
