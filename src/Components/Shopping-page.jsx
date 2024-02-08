@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ItemCard from "./Item-Card";
+import './Shopping-page.css'
 
 export default function ShoppingPage() {
 
@@ -47,25 +48,27 @@ export default function ShoppingPage() {
 
 
     return (
-      <div id="shopping-section">
+      <div>
         <h1>ITEMS</h1>
         {loading && <div>Loading...</div>}
         {error && (
           <div>{`There is a problem fetching the post data - ${error}`}</div>
         )}
-        {data && data.map((item, index) =>{
-          console.log(item)
-          return (
-          //TODO: Figure out why the ItemCard Component doesn't render anything. Think it has to do with react router.
-          <div className="item-card">
-            <h1>{item.title}</h1>
-            <h2>{item.price}</h2>
-            <h3>{item.category}</h3>
-            <p>{item.description}</p>
-            <img src={item.image} alt="" />
-          </div>
-          )
-        })}
+        <div className="shopping-section">
+          {data && data.map((item, index) =>{
+            return (
+            //TODO: Figure out why the ItemCard Component doesn't render anything. Think it has to do with react router.
+            <div className="item-card">
+              <img className="item-img" src={item.image} alt="" />
+              <h1 className="item-title">{item.title}</h1>
+              <h2 className="item-price">${item.price}</h2>
+              {/* <h3 className="item-category">{item.category}</h3> */}
+              {/* <p>{item.description}</p> */}
+            </div>
+            // <ItemCard {...item} />
+            )
+          })}
+        </div>
       </div>
     );
   }
