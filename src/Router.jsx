@@ -28,7 +28,7 @@ const Router = () => {
           })
   }, []);
 
-  console.log(cartItems);
+  console.log(data);
   const router = createBrowserRouter([
     {
       path: "/",
