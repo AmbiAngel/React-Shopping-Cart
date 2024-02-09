@@ -7,7 +7,7 @@ import HomePage from './Components/Home-page'
 import { Outlet } from "react-router-dom";
 import ItemCard from './Components/Item-Card'
 
-function App() {
+function App({numOfItems}) {
   function handleAddToCartBtn(e){
     e.preventDefault()
     console.log('gi')
@@ -35,7 +35,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p> */}
 
-      <NavBar></NavBar>
+      <NavBar numOfItems={numOfItems}></NavBar>
       <Outlet></Outlet>
     </div>
   )

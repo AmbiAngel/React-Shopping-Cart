@@ -1,7 +1,7 @@
 import './Navbar.css'
 import {Link} from "react-router-dom"
 
-export default function NavBar() {
+export default function NavBar({numOfItems}) {
 
 
   return (
@@ -9,7 +9,7 @@ export default function NavBar() {
         <ul>
             <li><Link to={'home'}>Home</Link></li>
             <li><Link to={'shopping'}>Store</Link></li>
-            <li className='cart'><a href="">Cart: <span className='num-of-items'></span></a></li>
+            <li className='cart'><a href="">Cart: <span className='num-of-items'>{numOfItems}</span></a></li>
         </ul>
     </div>
   );
