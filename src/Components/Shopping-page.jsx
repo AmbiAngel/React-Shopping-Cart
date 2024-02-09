@@ -5,12 +5,12 @@ import './Shopping-page.css'
 export default function ShoppingPage({data, loading, error, setCartItems, cartItems}) {
 
     
-    function handleAddToCartBtn(itemObj){
+    function handleAddToCartBtn(itemObj, quantity){
       let cartObj = {
-        itemObj,
-
+        itemObj: itemObj,
+        itemQuantity: quantity
       }
-      let newArr = [...cartItems, itemObj]
+      let newArr = [...cartItems, cartObj]
       setCartItems(newArr)
     }
 
@@ -41,7 +41,7 @@ export default function ShoppingPage({data, loading, error, setCartItems, cartIt
             //       }>Add</button>
             //   </form>
             // </div>
-            <ItemCard {...item} />
+            <ItemCard {...item} item={item} handleAddToCartBtn={handleAddToCartBtn} />
             )
           })}
         </div>

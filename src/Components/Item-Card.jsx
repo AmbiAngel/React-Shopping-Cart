@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function ItemCard({id, title, price, category, description, image}){
+export default function ItemCard({id, title, price, category, description, image, handleAddToCartBtn, item}){
     let [itemAmount, setItemAmount] = useState(1)
     return(
         <div className="item-card" key={id}>
@@ -18,7 +18,7 @@ export default function ItemCard({id, title, price, category, description, image
                 <button type="submit" onClick={
                     (e) =>{
                     e.preventDefault()
-                    //   handleAddToCartBtn(item)
+                    handleAddToCartBtn(item, Number(itemAmount))
                     }
                     }>Add</button>
             </form>
