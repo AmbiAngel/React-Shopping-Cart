@@ -50,7 +50,7 @@ const Router = () => {
         },
         {
           path: "/cart",
-          element: <CartPage cartItems={cartItems}/>,
+          element: <CartPage cartItems={cartItems} setCartItems={setCartItems}/>,
         },
       ]
     },
