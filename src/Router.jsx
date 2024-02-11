@@ -29,11 +29,23 @@ const Router = () => {
           })
   }, []);
 
-  console.log(cartItems);
+  function calcTotalNumberOfItems(){
+    return(
+        cartItems.reduce(
+            (accumulator, currentValue)=> currentValue.itemQuantity + accumulator,
+            0
+        )
+    )
+  }
+
+  let totalNumOfItems = cartItems.reduce(
+    (accumulator, currentValue)=> currentValue.itemQuantity + accumulator,
+    0)
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <App numOfItems={cartItems.length}/>,
+      element: <App numOfItems={totalNumOfItems}/>,
       errorElement: <ErrorPage />,
       children:[
         { 
