@@ -4,6 +4,7 @@ import ErrorPage from "./Components/Error-page";
 import HomePage from "./Components/Home-page";
 import ShoppingPage from './Components/Shopping-page'
 import { useState, useEffect } from "react";
+import CartPage from "./Components/Cart-Page"
 
 const Router = () => {
 
@@ -46,6 +47,10 @@ const Router = () => {
         {
           path: "/shopping",
           element: <ShoppingPage data={data} loading={loading} error={error} setCartItems={setCartItems} cartItems={cartItems}/>,
+        },
+        {
+          path: "/cart",
+          element: <CartPage cartItems={cartItems}/>,
         },
       ]
     },

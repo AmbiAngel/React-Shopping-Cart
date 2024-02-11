@@ -9,7 +9,7 @@ export default function NavBar({numOfItems}) {
         <ul>
             <li><Link to={'home'}>Home</Link></li>
             <li><Link to={'shopping'}>Store</Link></li>
-            <li className='cart'><a href="">Cart: <span className='num-of-items'>{numOfItems}</span></a></li>
+            <li className='cart'><Link to={'cart'}>Cart: <span className='num-of-items'>{numOfItems}</span></Link></li>
         </ul>
     </div>
   );

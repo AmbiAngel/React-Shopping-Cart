@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemCard from "./Item-Card";
 import './Shopping-page.css'
+import InputForm from "./Input-Form";
 
 export default function ShoppingPage({data, loading, error, setCartItems, cartItems}) {
 
@@ -41,7 +42,9 @@ export default function ShoppingPage({data, loading, error, setCartItems, cartIt
             //       }>Add</button>
             //   </form>
             // </div>
-            <ItemCard {...item} item={item} handleAddToCartBtn={handleAddToCartBtn} />
+            <ItemCard {...item} >
+              <InputForm item={item} handleAddToCartBtn={handleAddToCartBtn}/>
+            </ItemCard>
             )
           })}
         </div>
