@@ -27,6 +27,13 @@ export default function CartPage({cartItems, setCartItems}){
         )
     }
 
+    function handleChangeItemQuantity(e,index){
+        let newList = [...cartItems]
+        newList[index].itemQuantity = Number(e.target.value)
+        setCartItems(newList)
+    }
+
+
     return(
         <div className="cart-section">
             <div className="cart-info-container">
@@ -41,6 +48,12 @@ export default function CartPage({cartItems, setCartItems}){
                     return(
                         <ItemCard {...item.itemObj}>
                             <>
+                                <input 
+                                type="number"
+                                value={item.itemQuantity}
+                                onChange={(e)=>handleChangeItemQuantity(e,index)}
+                                min='1'
+                                />
                                 <p>Quantity: {item.itemQuantity}</p>
                                 <button onClick={(e)=>handleClickRemoveItemFromCart(index)} className="remove-item-btn">Remove from Cart</button>
                             </>
