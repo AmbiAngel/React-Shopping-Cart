@@ -15,7 +15,9 @@ export default function CartPage({cartItems, setCartItems}){
 
             </div>
             <div className="cart-items-container">
-                {cartItems && cartItems.map((item,index)=>{
+                {cartItems.length > 0 
+                ?
+                cartItems.map((item,index)=>{
                     return(
                         <ItemCard {...item.itemObj}>
                             <>
@@ -24,7 +26,10 @@ export default function CartPage({cartItems, setCartItems}){
                             </>
                         </ItemCard>
                     )
-                })}
+                }) 
+                : 
+                <h2>Cart Empty :(</h2>
+            }
             </div>
         </div>
 
