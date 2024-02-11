@@ -9,9 +9,29 @@ export default function CartPage({cartItems, setCartItems}){
         setCartItems(newList)
     }
 
+    function calcTotalPrice(){
+        return(
+            cartItems.reduce(
+                (accumulator, currentValue)=> (currentValue.itemObj.price * currentValue.itemQuantity) + accumulator,
+                0
+            )
+        )
+    }
+
+    function calcTotalNumberOfItems(){
+        return(
+            cartItems.reduce(
+                (accumulator, currentValue)=> currentValue.itemQuantity + accumulator,
+                0
+            )
+        )
+    }
+
     return(
         <div className="cart-section">
             <div className="cart-info-container">
+                <h2 className="total-price">${calcTotalPrice()}</h2>
+                <h2 className="total-number-of-items">{calcTotalNumberOfItems()} Items</h2>
 
             </div>
             <div className="cart-items-container">
