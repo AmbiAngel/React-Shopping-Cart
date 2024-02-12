@@ -61,7 +61,7 @@ export default function CartPage({cartItems, setCartItems}){
                     )
                 }) 
                 : 
-                <h2>Cart Empty :(</h2>
+                <div className="cart-info-container">Cart Empty :(</div>
             }
             </div>
         </div>

@@ -16,11 +16,11 @@ export default function ShoppingPage({data, loading, error, setCartItems, cartIt
     }
 
     return (
-      <div>
+      <div className="shopping-container">
         <h1>ITEMS</h1>
-        {loading && <div>Loading...</div>}
+        {loading && <div className="shopping-state-info">Loading...</div>}
         {error && (
-          <div>{`There is a problem fetching the post data - ${error}`}</div>
+          <div className="shopping-state-info">{`There is a problem fetching the post data - ${error}`}</div>
         )}
         <div className="shopping-section">
           {data && data.map((item, index) =>{
