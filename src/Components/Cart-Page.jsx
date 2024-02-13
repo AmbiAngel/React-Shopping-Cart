@@ -33,12 +33,16 @@ export default function CartPage({cartItems, setCartItems}){
         setCartItems(newList)
     }
 
+    function handleCheckoutBtnClick(){
+        alert('This is just a Demo!')
+    }
 
     return(
         <div className="cart-section">
             <div className="cart-info-container">
                 <h2 className="total-price">${calcTotalPrice()}</h2>
                 <h2 className="total-number-of-items">{calcTotalNumberOfItems()} Items</h2>
+                <button onClick={handleCheckoutBtnClick} className="checkout-btn">Checkout</button>
 
             </div>
             <div className="cart-items-container">
