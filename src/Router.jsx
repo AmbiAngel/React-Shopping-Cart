@@ -64,6 +64,10 @@ const Router = () => {
           path: "/cart",
           element: <CartPage cartItems={cartItems} setCartItems={setCartItems}/>,
         },
+        {
+          path: "/about",
+          element: <CartPage cartItems={cartItems} setCartItems={setCartItems}/>,
+        },
       ]
     },
 

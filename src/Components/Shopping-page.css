@@ -1,7 +1,6 @@
 *{
-  font-size: 12px;
-  margin: 0;
-  padding: 0;
+
+
 }
 
 .shopping-container{
@@ -11,16 +10,17 @@
 
 .shopping-section{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
   gap: 50px;
   padding: 20px;
 }
 
 .item-card{
-  padding: 20px;
+  padding: 60px 20px;
   display: grid;
   justify-content: center;
   justify-items: center;
+  align-items: center;
   grid-template-rows: 160px 1fr 1fr;
   grid-template-areas: 
   'img'
@@ -32,6 +32,23 @@
   gap: 10px;
   }
   
+.item-card form{
+height: 100%;
+}
+
+.item-card input{
+  padding: 5px;
+  border-radius: 10px;
+  border: black 1px solid;
+  max-width: 80px;
+  margin-right: 10px;
+  height: auto;
+  text-align: center;
+}
+
+.item-card button{
+  background-color: rgb(111, 226, 111);
+}
 
 .shopping-state-info{
   padding: 20px;
