@@ -7,12 +7,24 @@ export default function ShoppingPage({data, loading, error, setCartItems, cartIt
 
     
     function handleAddToCartBtn(itemObj, quantity){
-      let cartObj = {
-        itemObj: itemObj,
-        itemQuantity: quantity
+      const existingItemIndex = cartItems.findIndex((item)=> item.itemObj.id === itemObj.id)
+      if(existingItemIndex !== -1){
+        let newArr = [...cartItems]
+        newArr[existingItemIndex].itemQuantity += quantity
+        setCartItems(newArr)
       }
-      let newArr = [...cartItems, cartObj]
-      setCartItems(newArr)
+      else if(existingItemIndex === -1){
+        let cartObj = {
+          itemObj: itemObj,
+          itemQuantity: quantity
+        }
+        let newArr = [...cartItems, cartObj]
+        setCartItems(newArr)
+      }
+      else{
+        throw Error('Something went terribly wrong in handleAddToCartBtn() Shopping-Page.jsx')
+      }
+
     }
 
     return (
