@@ -30,19 +30,6 @@ const Router = () => {
             setLoading(false);
           })
   }, []);
-
-  // function calcTotalNumberOfItems(){
-  //   return(
-  //       cartItems.reduce(
-  //           (accumulator, currentValue)=> currentValue.itemQuantity + accumulator,
-  //           0
-  //       )
-  //   )
-  // }
-
-  // let totalNumOfItems = cartItems.reduce(
-  //   (accumulator, currentValue)=> currentValue.itemQuantity + accumulator,
-  //   0)
     
   let totalNumOfItems = useMemo(()=>{
     return cartItems.reduce(
@@ -79,11 +66,6 @@ const Router = () => {
         },
       ]
     },
-
-    // {
-    //   path: "profile/:name",
-    //   element: <Profile />,
-    // },
   ]);
 
   return <RouterProvider router={router} />;

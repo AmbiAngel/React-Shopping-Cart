@@ -6,8 +6,6 @@ export default function ItemCard({id, title, price, category, description, image
             <img className="item-img" src={image} alt="" />
             <h1 className="item-title">{title}</h1>
             <h2 className="item-price">${price}</h2>
-            {/* <h3 className="item-category">{item.category}</h3> */}
-            {/* <p>{item.description}</p> */}
             {children}
         </div>
     )
