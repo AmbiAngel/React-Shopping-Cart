@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import App from "./App";
+import { useState, useEffect, useMemo } from "react";
+
 import ErrorPage from "./Components/Error-page";
 import HomePage from "./Components/Home-page";
 import ShoppingPage from './Components/Shopping-page'
-import { useState, useEffect, useMemo } from "react";
 import CartPage from "./Components/Cart-Page"
+import AboutPage from "./Components/About-Page";
 
 const Router = () => {
 
@@ -73,7 +75,7 @@ const Router = () => {
         },
         {
           path: "/about",
-          element: <CartPage cartItems={cartItems} setCartItems={setCartItems}/>,
+          element: <AboutPage />,
         },
       ]
     },
