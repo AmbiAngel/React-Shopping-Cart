@@ -3,7 +3,7 @@ import App from "./App";
 import ErrorPage from "./Components/Error-page";
 import HomePage from "./Components/Home-page";
 import ShoppingPage from './Components/Shopping-page'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import CartPage from "./Components/Cart-Page"
 
 const Router = () => {
@@ -29,18 +29,25 @@ const Router = () => {
           })
   }, []);
 
-  function calcTotalNumberOfItems(){
-    return(
-        cartItems.reduce(
-            (accumulator, currentValue)=> currentValue.itemQuantity + accumulator,
-            0
-        )
-    )
-  }
+  // function calcTotalNumberOfItems(){
+  //   return(
+  //       cartItems.reduce(
+  //           (accumulator, currentValue)=> currentValue.itemQuantity + accumulator,
+  //           0
+  //       )
+  //   )
+  // }
 
-  let totalNumOfItems = cartItems.reduce(
-    (accumulator, currentValue)=> currentValue.itemQuantity + accumulator,
-    0)
+  // let totalNumOfItems = cartItems.reduce(
+  //   (accumulator, currentValue)=> currentValue.itemQuantity + accumulator,
+  //   0)
+    
+  let totalNumOfItems = useMemo(()=>{
+    return cartItems.reduce(
+      (accumulator, currentValue)=> currentValue.itemQuantity + accumulator,
+      0)
+  }, [cartItems])
+      
 
   const router = createBrowserRouter([
     {
