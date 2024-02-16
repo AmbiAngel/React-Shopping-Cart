@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   text-align: center;
+  --margin-top-navbar: 69px
 }
 body{
   margin: 0;
@@ -47,10 +48,20 @@ body{
     "main-content";
 }
 
-.main-content{
-  grid-area: main-content;
-}
-
 .navbar{
   grid-area: navbar;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+
+.main-content{
+  grid-area: main-content;
+  margin-top: var(--margin-top-navbar);  
+}
+.margin-top-navbar{
+  margin-top: var(--margin-top-navbar);
 }

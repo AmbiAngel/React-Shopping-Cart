@@ -31,7 +31,7 @@ export default function HomePage({data, loading, error}) {
   console.log(data);
     return (
       <>
-      <div className="home-info">
+      <div className="home-info margin-top-navbar">
         <h1 className="home-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, quaerat.</h1>
         <Link className="home-link" to={"/shopping"}>Shop Now</Link>
       </div>
