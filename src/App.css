@@ -41,9 +41,16 @@ body{
 .content{
   height:100vh;
   display: grid;
-  grid-template-rows: 40px 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas: 
-    "navbar",
-    "main-content"
-  ;
+    "navbar"
+    "main-content";
+}
+
+.main-content{
+  grid-area: main-content;
+}
+
+.navbar{
+  grid-area: navbar;
 }

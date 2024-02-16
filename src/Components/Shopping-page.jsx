@@ -28,7 +28,7 @@ export default function ShoppingPage({data, loading, error, setCartItems, cartIt
     }
 
     return (
-      <div className="shopping-container">
+      <div className="shopping-container main-content">
         <h1>ITEMS</h1>
         {loading && <div className="shopping-state-info">Loading...</div>}
         {error && (
