@@ -12,7 +12,7 @@ export default function NavBar({numOfItems}) {
             <li><Link className='nav-text' to={'about'}>About</Link></li>
             <li className='cart cart-items-link'>
               <Link className='nav-text ' to={'cart'}>
-                <img className='cart-svg' src="public/cart-shopping-solid.svg" alt="" />
+                <img className='cart-svg' src="cart-shopping-solid.svg" alt="" />
                 <span className='num-of-items'>{numOfItems}</span>
               </Link>
             </li>
