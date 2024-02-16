@@ -35,7 +35,7 @@ export default function HomePage({data, loading, error}) {
         <h1 className="home-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, quaerat.</h1>
         <Link className="home-link" to={"/shopping"}>Shop Now</Link>
       </div>
-      <Carousel responsive={responsive}>
+      <Carousel responsive={responsive} className='carousel'>
         {loading && <div className="shopping-state-info">Loading...</div>}
         {error && (
           <div className="shopping-state-info">{`There is a problem fetching the post data - ${error}`}</div>
