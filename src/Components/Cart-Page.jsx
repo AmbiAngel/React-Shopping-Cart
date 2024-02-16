@@ -38,7 +38,7 @@ export default function CartPage({cartItems, setCartItems}){
     }
 
     return(
-        <div className="cart-section">
+        <div className="cart-section main-content">
             <div className="cart-info-container">
                 <h2 className="total-price">${calcTotalPrice()}</h2>
                 <h2 className="total-number-of-items">{calcTotalNumberOfItems()} Items</h2>
